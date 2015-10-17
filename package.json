@@ -1,0 +1,26 @@
+{
+  "name": "word2vec-experiments",
+  "version": "1.0.0",
+  "description": "Experiments on word2vec library and Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infloop/word2vec-experiments.git"
+  },
+  "keywords": [
+    "word2vec"
+  ],
+  "author": "Infloop",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/infloop/word2vec-experiments/issues"
+  },
+  "homepage": "https://github.com/infloop/word2vec-experiments#readme",
+  "dependencies": {
+    "lodash": "^3.10.1",
+    "word2vec": "^0.9.2"
+  }
+}
