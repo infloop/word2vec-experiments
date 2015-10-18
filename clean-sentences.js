@@ -6,7 +6,7 @@ var utils = require('./utils');
 var _ = require('lodash');
 
 var path = './files/';
-var storeFile = './sentences/sentenses.json';
+var storeFile = './sentences/sentences.txt';
 
 var totalCount = 0;
 var totalSentences = [];

@@ -137,6 +137,7 @@ var utils = module.exports =  {
      */
     isSimpleSentence: function(sentence) {
         if(!sentence) return false;
+        if(!sentence.length) return false;
 
         let simple = true;
         for(let i=0; i<  sentence.length; i++) {
