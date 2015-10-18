@@ -2,4 +2,7 @@
 
 var w2v = require('word2vec');
 
-w2v.loadModel();
+var input = [];
+
+var output = null;
+
