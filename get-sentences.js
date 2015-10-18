@@ -4,10 +4,16 @@ var fs = require('fs');
 
 var author = 'LUKXQN';
 var titles = [
-    //'posol.txt',
-    //'rainbow.txt',
-    //'expert.txt'
-    'lukian49.txt'
+    'posol.txt',
+    'rainbow.txt',
+    'expert.txt',
+    'lukian49.txt',
+    'captain.txt',
+    'r_master.txt',
+    'lknkmpnt.txt',
+    'r_wybor.txt',
+    'guide.txt',
+    'pv.txt'
 ];
 
 var totalSentences = 0;

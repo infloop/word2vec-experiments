@@ -1,8 +1,12 @@
+'use strict';
+
 var _ = require('lodash');
 
 var charSets = {
     letters: ('qwertyuiopasdfghjklzxcvbnm' + 'йцукенгшщзфывапролджэхъячсмитьбю').split(''),
     digits: ('1234567890').split(''),
+    endOfSentence: ['...','.','!!!','!?','?','!'],
+    startOfSentence: ['--','-'],
     special: ('!@#$%^&*()_+=-{}[];:\'<>"/?,.№').split(''),
     space: [' ']
 };
@@ -93,6 +97,11 @@ var utils = module.exports =  {
         return buffer;
     },
 
+    /**
+     *
+     * @param {String} text
+     * @returns {Array<String>}
+     */
     splitIntoSentences: function(text) {
         var chunks = this.splitKeep(text, splitSymbols);
 
@@ -119,5 +128,51 @@ var utils = module.exports =  {
         });
 
         return sentences;
+    },
+
+    /**
+     *
+     * @param {Array<String>} sentence
+     * @returns {boolean}
+     */
+    isSimpleSentence: function(sentence) {
+        if(!sentence) return false;
+
+        let simple = true;
+        for(let i=0; i<  sentence.length; i++) {
+            let word = sentence[i];
+            if(word.length == 1 && charSets.special.indexOf(word) >=0) {
+                simple = false;
+            } else if(word.length == 3 && splitSymbols.indexOf(word) >=0) {
+                simple = false;
+            }
+        }
+
+        return simple;
+    },
+
+    /**
+     *
+     * @param {Array<String>} sentence
+     * @returns {Array<String>}
+     */
+    cleanSentence: function(sentence) {
+        var newSentence = [];
+        for(let i=0; i<sentence.length; i++) {
+            let word = sentence[i];
+            if(i==0) {
+                word = word.toLowerCase();
+            }
+
+            if(i == 0 && charSets.startOfSentence.indexOf(word) >=0) {
+
+            } else if(i == (sentence.length -1) && charSets.endOfSentence.indexOf(word) >=0) {
+
+            } else {
+                newSentence.push(word);
+            }
+        }
+
+        return newSentence;
     }
 };
